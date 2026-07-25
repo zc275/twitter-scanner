@@ -1,0 +1,55 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Scanner Configuration
+# ─────────────────────────────────────────────────────────────────────────────
+# Both scanners pass ALL content to Claude Code for judgment.
+# No keyword scoring — Claude decides what's valuable based on the
+# preferences embedded in each scanner's output.
+
+# ── HN Settings ──────────────────────────────────────────────────────────────
+
+feeds:
+  - topstories
+  - beststories
+
+max_stories: 150       # how many raw stories to fetch from HN
+max_age_hours: 48      # ignore stories older than this
+
+# ── Twitter Settings ─────────────────────────────────────────────────────────
+
+# Tried in order — first working instance wins
+nitter_instances:
+  - "https://nitter.net"
+  - "https://xcancel.com"
+  - "https://nitter.poast.org"
+  - "https://nitter.privacyredirect.com"
+  - "https://nitter.catsarch.com"
+  - "https://nitter.tiekoetter.com"
+
+accounts:
+  - "JulienBek"
+  - "tvytlx"
+  - "karpathy"
+  - "garrytan"
+  - "andrewchen"
+  - "gregisenberg"
+  - "pmarca"
+  - "paulg"
+  - "danshipper"
+  - "jeffdean"
+  - "officiallogank"
+  - "natolambert"
+  - "yuchenj_uw"
+  - "michael_chomsky"
+  - "hwchase17"
+
+twitter_max_age_hours: 72
+delay_between_accounts: 2.0
+
+# ── Feedback Log ─────────────────────────────────────────────────────────────
+# After Claude scores your stories, you can mark them:
+#   hit  = genuinely valuable, would read again
+#   miss = wasted time, not what you're looking for
+#
+# Save feedback to feedback.jsonl (one JSON object per line):
+#   {"source": "hn", "id": 12345, "title": "...", "verdict": "hit", "date": "2026-04-03"}
+#   {"source": "twitter", "username": "paulg", "url": "...", "verdict": "miss", "date": "2026-04-03"}

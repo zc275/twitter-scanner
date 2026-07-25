@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.DS_Store
+
+# Personal email settings — never commit
+.env
+
+# Local state — regenerated on each scan
+.last_twitter_scan
+feedback.jsonl
+
+# Per-machine Claude Code permissions
+.claude/settings.local.json
