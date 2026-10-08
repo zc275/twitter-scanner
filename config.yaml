@@ -18,6 +18,10 @@ max_age_hours: 48      # ignore stories older than this
 
 # Tried in order — first working instance wins
 nitter_instances:
+  - "https://nitter.kareem.one"
+  - "https://shitter.thepixora.com"
+  - "https://nitter.pp.ua"
+  - "https://nitter.meowing.monster"
   - "https://nitter.net"
   - "https://xcancel.com"
   - "https://nitter.poast.org"

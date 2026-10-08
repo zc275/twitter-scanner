@@ -26,9 +26,13 @@ except ImportError:
 
 # ── Nitter Instance Management ───────────────────────────────────────────────
 
-# Ordered by reliability — xcancel first (actively maintained fork),
-# then other known-working instances. Script tries each until one works.
+# Ordered by reliability (checked against status.d420.de, Oct 2026),
+# older instances kept as fallbacks. Script tries each until one works.
 DEFAULT_INSTANCES = [
+    "https://nitter.kareem.one",
+    "https://shitter.thepixora.com",
+    "https://nitter.pp.ua",
+    "https://nitter.meowing.monster",
     "https://nitter.net",
     "https://xcancel.com",
     "https://nitter.poast.org",
