@@ -203,11 +203,7 @@ def parse_rss_item(item, username):
         age_hours = parse_age(pub_date)
 
     # Normalize URL to x.com regardless of which instance fetched it
-    twitter_url = link
-    for d in ["nitter.net", "nitter.poast.org", "xcancel.com",
-              "nitter.privacyredirect.com", "nitter.catsarch.com",
-              "nitter.tiekoetter.com", "nuku.trabun.org", "lightbrd.com"]:
-        twitter_url = twitter_url.replace(d, "x.com")
+    twitter_url = re.sub(r"^https?://[^/]+", "https://x.com", link).split("#")[0]
 
     is_retweet = text.startswith("RT @") or text.startswith("R to @")
     has_links = "http://" in text or "https://" in text
